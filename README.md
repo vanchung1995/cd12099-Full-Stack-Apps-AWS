@@ -22,3 +22,9 @@ Successful URL responses should have a 200 code. Ensure that you include error c
 ## License
 
 [License](LICENSE.txt)
+
+## URL for get Bearer token:
+`http://project-starter-code-dev.us-east-1.elasticbeanstalk.com/auth/token`
+
+## URL for testing
+`http://project-starter-code-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://fileinfo.com/img/ss/xl/jpg_44-2.jpg`

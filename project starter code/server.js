@@ -35,14 +35,14 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
  
     if (!image_url) {
       const current_path = req.get('host') + req.path;
-      res.send(`You should include image_url param on query:    <code><b>${current_path}?image_url={{URL}}</b></code><br>
+      res.status(400).send(`You should include image_url param on query:    <code><b>${current_path}?image_url={{URL}}</b></code><br>
         This image_url need to be encoded`)
       return;
     }
  
     const validUrl = URL.canParse(image_url);
     if (!validUrl) {
-      res.send(`image_url param should be a valid url and need to be encoded`)
+      res.status(400).send(`image_url param should be a valid url and need to be encoded`)
       return;
     }
  
@@ -60,7 +60,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
      });
     } catch (error) {
       console.log("Error: ", error)
-      res.status(404).send(`Cannot get image from url`)
+      res.status(500).send(`Cannot get image from url`)
     }
   });
   
